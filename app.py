@@ -4,10 +4,9 @@ from transformers import AutoImageProcessor, AutoModelForObjectDetection, pipeli
 from PIL import Image
 import io
 
-processor = AutoImageProcessor.from_pretrained("microsoft/table-transformer-detection")
-model = AutoModelForObjectDetection.from_pretrained("microsoft/table-transformer-detection")
-pipe = pipeline("object-detection", model="microsoft/table-transformer-detection",processor="microsoft/table-transformer-detection") 
-
+processor = AutoImageProcessor.from_pretrained("facebook/detr-resnet-101")
+model = AutoModelForObjectDetection.from_pretrained("facebook/detr-resnet-101")
+pipe = pipeline("object-detection", model="facebook/detr-resnet-101",processor="facebook/detr-resnet-101") 
 app = Flask(__name__)
 
 CORS(app)
